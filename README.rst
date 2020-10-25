@@ -78,7 +78,7 @@ Parsing a timestamp with no time zone information (ex. ``2014-01-09T21:48:00``):
 
 .. <include:benchmark_with_no_time_zone.rst>
 
-.. table:: 
+.. table::
 
     +---------------+----------+----------+----------+----------+----------+-------------------------------+-----------------------------------------------+
     |    Module     |Python 3.8|Python 3.7|Python 3.6|Python 3.5|Python 3.4|          Python 2.7           |Relative Slowdown (versus ciso8601, Python 3.8)|
@@ -120,7 +120,7 @@ Parsing a timestamp with time zone information (ex. ``2014-01-09T21:48:00-05:30`
 
 .. <include:benchmark_with_time_zone.rst>
 
-.. table:: 
+.. table::
 
     +---------------+-------------------------------+-------------------------------+-------------------------------+-------------------------------+----------+-------------------------------+-----------------------------------------------+
     |    Module     |          Python 3.8           |          Python 3.7           |          Python 3.6           |          Python 3.5           |Python 3.4|          Python 2.7           |Relative Slowdown (versus ciso8601, Python 3.8)|
@@ -195,13 +195,13 @@ In Python 2, ``ciso8601`` uses the `pytz`_ library while parsing timestamps with
 .. _pytz: http://pytz.sourceforge.net/
 
 .. code:: python
-  
+
   pip install pytz
 
 Otherwise, ``ciso8601`` will raise an exception when you try to parse a timestamp with time zone information:
 
 .. code:: python
-  
+
   In [2]: ciso8601.parse_datetime('2014-12-05T12:30:45.123456-05:30')
   Out[2]: ImportError: Cannot parse a timestamp with time zone information without the pytz dependency. Install it with `pip install pytz`.
 
@@ -229,11 +229,11 @@ The following date formats are supported:
    ``YYYY-MM-DD``                ``2018-04-29`` ✅
    ``YYYY-MM``                   ``2018-04``    ✅
    ``YYYYMMDD``                  ``2018-04``    ✅
-   ``--MM-DD`` (omitted year)    ``--04-29``    ❌              
+   ``--MM-DD`` (omitted year)    ``--04-29``    ❌
    ``--MMDD`` (omitted year)     ``--0429``     ❌
-   ``±YYYYY-MM`` (>4 digit year) ``+10000-04``  ❌   
-   ``+YYYY-MM`` (leading +)      ``+2018-04``   ❌   
-   ``-YYYY-MM`` (negative -)     ``-2018-04``   ❌   
+   ``±YYYYY-MM`` (>4 digit year) ``+10000-04``  ❌
+   ``+YYYY-MM`` (leading +)      ``+2018-04``   ❌
+   ``-YYYY-MM`` (negative -)     ``-2018-04``   ❌
    ============================= ============== ==================
 
 Week dates or ordinal dates are not currently supported.
@@ -249,7 +249,7 @@ Week dates or ordinal dates are not currently supported.
    ``YYYY-Www-D`` (week date)    ``2009-W01-1`` ❌
    ``YYYYWwwD`` (week date)      ``2009-W01-1`` ❌
    ``YYYY-DDD`` (ordinal date)   ``1981-095``   ❌
-   ``YYYYDDD`` (ordinal date)    ``1981095``    ❌ 
+   ``YYYYDDD`` (ordinal date)    ``1981095``    ❌
    ============================= ============== ==================
 
 Time Formats
@@ -266,22 +266,22 @@ The following time formats are supported:
 .. table::
    :widths: auto
 
-   =================================== =================== ==============  
-   Format                              Example             Supported          
-   =================================== =================== ============== 
-   ``hh``                              ``11``              ✅ 
-   ``hhmm``                            ``1130``            ✅ 
-   ``hh:mm``                           ``11:30``           ✅ 
-   ``hhmmss``                          ``113059``          ✅ 
-   ``hh:mm:ss``                        ``11:30:59``        ✅ 
-   ``hhmmss.ssssss``                   ``113059.123456``   ✅ 
-   ``hh:mm:ss.ssssss``                 ``11:30:59.123456`` ✅ 
-   ``hhmmss,ssssss``                   ``113059,123456``   ✅ 
-   ``hh:mm:ss,ssssss``                 ``11:30:59,123456`` ✅ 
-   Midnight (special case)             ``24:00:00``        ✅               
-   ``hh.hhh`` (fractional hours)       ``11.5``            ❌               
-   ``hh:mm.mmm`` (fractional minutes)  ``11:30.5``         ❌               
-   =================================== =================== ============== 
+   =================================== =================== ==============
+   Format                              Example             Supported
+   =================================== =================== ==============
+   ``hh``                              ``11``              ✅
+   ``hhmm``                            ``1130``            ✅
+   ``hh:mm``                           ``11:30``           ✅
+   ``hhmmss``                          ``113059``          ✅
+   ``hh:mm:ss``                        ``11:30:59``        ✅
+   ``hhmmss.ssssss``                   ``113059.123456``   ✅
+   ``hh:mm:ss.ssssss``                 ``11:30:59.123456`` ✅
+   ``hhmmss,ssssss``                   ``113059,123456``   ✅
+   ``hh:mm:ss,ssssss``                 ``11:30:59,123456`` ✅
+   Midnight (special case)             ``24:00:00``        ✅
+   ``hh.hhh`` (fractional hours)       ``11.5``            ❌
+   ``hh:mm.mmm`` (fractional minutes)  ``11:30.5``         ❌
+   =================================== =================== ==============
 
 **Note:** Python datetime objects only have microsecond precision (6 digits). Any additional precision will be truncated.
 
@@ -293,9 +293,9 @@ Time zone information may be provided in one of the following formats:
 .. table::
    :widths: auto
 
-   ========== ========== =========== 
-   Format     Example    Supported          
-   ========== ========== =========== 
+   ========== ========== ===========
+   Format     Example    Supported
+   ========== ========== ===========
    ``Z``      ``Z``      ✅
    ``z``      ``z``      ✅
    ``±hh``    ``+11``    ✅
